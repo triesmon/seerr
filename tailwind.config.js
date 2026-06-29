@@ -1,5 +1,34 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const defaultTheme = require('tailwindcss/defaultTheme');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const colors = require('tailwindcss/colors');
+
+const hexToRgb = (hex) => {
+  const normalized = hex.replace('#', '');
+  const expanded =
+    normalized.length === 3
+      ? normalized
+          .split('')
+          .map((char) => `${char}${char}`)
+          .join('')
+      : normalized;
+
+  return `${parseInt(expanded.slice(0, 2), 16)} ${parseInt(
+    expanded.slice(2, 4),
+    16
+  )} ${parseInt(expanded.slice(4, 6), 16)}`;
+};
+
+const colorVariable = (name, fallback) =>
+  `rgb(var(--color-${name}, ${fallback}) / <alpha-value>)`;
+
+const colorScale = (name, scale) =>
+  Object.fromEntries(
+    Object.entries(scale).map(([shade, value]) => [
+      shade,
+      colorVariable(`${name}-${shade}`, hexToRgb(value)),
+    ])
+  );
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -17,6 +46,19 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter Variable', ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        black: colorVariable('black', '0 0 0'),
+        white: colorVariable('white', '255 255 255'),
+        blue: colorScale('blue', colors.blue),
+        gray: colorScale('gray', colors.gray),
+        green: colorScale('green', colors.green),
+        indigo: colorScale('indigo', colors.indigo),
+        neutral: colorScale('neutral', colors.neutral),
+        orange: colorScale('orange', colors.orange),
+        purple: colorScale('purple', colors.purple),
+        red: colorScale('red', colors.red),
+        yellow: colorScale('yellow', colors.yellow),
       },
       typography: (theme) => ({
         DEFAULT: {
