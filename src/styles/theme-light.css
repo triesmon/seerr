@@ -8,7 +8,6 @@ html.theme-light {
   --color-white: 0 0 0;
   --color-blue-50: 4 11 20;
   --color-blue-300: 21 71 127;
-  --color-blue-600: 101 163 255;
   --color-gray-50: 4 5 6;
   --color-gray-100: 10 11 13;
   --color-gray-200: 22 24 28;
@@ -20,8 +19,6 @@ html.theme-light {
   --color-gray-800: 206 216 230;
   --color-gray-900: 225 232 247;
   --color-green-50: 0 9 0;
-  --color-green-100: 0 20 0;
-  --color-green-400: 0 110 16;
   --color-green-700: 75 182 115;
   --color-indigo-50: 9 13 26;
   --color-indigo-100: 17 24 48;
@@ -36,7 +33,6 @@ html.theme-light {
   --color-purple-50: 11 6 16;
   --color-purple-200: 47 27 69;
   --color-purple-400: 140 80 200;
-  --color-purple-600: 233 137 255;
   --color-purple-700: 249 157 255;
   --color-red-50: 20 8 8;
   --color-red-100: 45 17 17;
@@ -79,7 +75,7 @@ html.theme-light body {
 
 html.theme-light #__next {
   min-height: 100%;
-  color: rgb(var(--color-white));
+  color: rgb(var(--color-gray-50));
 }
 
 .seerr-logo-light {
@@ -107,12 +103,12 @@ html.theme-light
   ) {
   border-color: rgb(var(--color-gray-500));
   background-color: rgb(var(--color-gray-700));
-  color: rgb(var(--color-white));
+  color: rgb(var(--color-gray-50));
 }
 
 html.theme-light :where(code) {
   background-color: rgb(var(--color-gray-800));
-  color: rgb(var(--color-white));
+  color: rgb(var(--color-gray-50));
 }
 
 html.theme-light :where(label, .group-label) {
@@ -130,16 +126,16 @@ html.theme-light .sidebar {
     rgb(var(--color-gray-800)) 0%,
     #e0e6f5 100%
   );
-  color: rgb(var(--color-white));
+  color: rgb(var(--color-gray-50));
 }
 
 html.theme-light .sidebar :where(a) {
-  color: rgb(var(--color-white));
+  color: rgb(var(--color-gray-50));
 }
 
 html.theme-light .sidebar :where(a:hover, a:focus) {
   background-color: rgb(var(--color-gray-700));
-  color: rgb(var(--color-white));
+  color: rgb(var(--color-gray-50));
 }
 
 html.theme-light .slider-title {
@@ -147,7 +143,7 @@ html.theme-light .slider-title {
 }
 
 html.theme-light a.slider-title:hover {
-  color: rgb(var(--color-white));
+  color: rgb(var(--color-gray-50));
 }
 
 html.theme-light .title-card-overlay {
@@ -156,4 +152,42 @@ html.theme-light .title-card-overlay {
     rgb(var(--color-gray-800) / 0.35) 0%,
     rgb(var(--color-gray-900) / 0.88) 100%
   ) !important;
+}
+
+html.theme-light .company-card {
+  background-color: #1f2937;
+  --tw-ring-color: #374151;
+}
+
+html.theme-light .company-card:hover {
+  background-color: #374151;
+  --tw-ring-color: #6b7280;
+}
+
+html.theme-light .company-card :where([class~='from-gray-800']) {
+  --tw-gradient-from: #1f2937 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(31 41 55 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+html.theme-light .company-card :where([class~='from-gray-900']) {
+  --tw-gradient-from: #111827 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(17 24 39 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+html.theme-light
+  [data-testid='title-card']
+  :where(
+    [class~='bg-blue-500'],
+    [class~='bg-blue-600/80'],
+    [class~='bg-purple-600'],
+    [class~='bg-purple-600/80'],
+    [class~='bg-green-400']
+  )
+  :where([class~='text-white']),
+html.theme-light
+  [data-testid='title-card']
+  :where([class~='bg-green-400'][class~='text-white']) {
+  color: #ffffff;
 }
