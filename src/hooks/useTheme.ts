@@ -67,35 +67,18 @@ const persistTheme = (theme: Theme) => {
   }
 };
 
-const getPreferredTheme = (): Theme => {
-  if (typeof window === 'undefined') {
-    return 'dark';
-  }
-
-  const storedTheme = getStoredTheme();
-  if (storedTheme) {
-    return storedTheme;
-  }
-
-  return window.matchMedia('(prefers-color-scheme: light)').matches
-    ? 'light'
-    : 'dark';
-};
-
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setCurrentTheme] = useState<Theme>('dark');
 
   useEffect(() => {
     const storedTheme = getStoredTheme();
-    const preferredTheme = getPreferredTheme();
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+    const preferredTheme =
+      storedTheme ?? (mediaQuery.matches ? 'light' : 'dark');
 
     setCurrentTheme(preferredTheme);
-    if (storedTheme) {
-      persistTheme(preferredTheme);
-    }
     applyTheme(preferredTheme);
 
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
     const handleSystemThemeChange = () => {
       if (!getStoredTheme()) {
         const nextTheme = mediaQuery.matches ? 'light' : 'dark';
