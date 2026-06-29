@@ -154,6 +154,36 @@ html.theme-light .title-card-overlay {
   ) !important;
 }
 
+html.theme-light .media-page-bg-overlay {
+  background-image: linear-gradient(
+    180deg,
+    rgb(var(--color-gray-900) / 0.35) 0%,
+    rgb(var(--color-gray-900) / 0.75) 58%,
+    rgb(var(--color-gray-900)) 100%
+  );
+}
+
+html.theme-light .media-collection-card {
+  background-color: #1f2937;
+  --tw-ring-color: #374151;
+}
+
+html.theme-light .media-collection-card:hover {
+  --tw-ring-color: #6b7280;
+}
+
+html.theme-light
+  .media-collection-card
+  :where([class~='text-gray-200']) {
+  color: #e5e7eb;
+}
+
+html.theme-light
+  .media-collection-card:hover
+  :where([class~='group-hover:text-white']) {
+  color: #ffffff;
+}
+
 html.theme-light .company-card {
   background-color: #1f2937;
   --tw-ring-color: #374151;

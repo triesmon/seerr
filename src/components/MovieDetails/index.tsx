@@ -452,13 +452,7 @@ const MovieDetails = ({ movie }: MovieDetailsProps) => {
             fill
             priority
           />
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                'linear-gradient(180deg, rgba(17, 24, 39, 0.47) 0%, rgba(17, 24, 39, 1) 100%)',
-            }}
-          />
+          <div className="media-page-bg-overlay absolute inset-0" />
         </div>
       )}
       <PageTitle title={data.title} />
@@ -738,7 +732,7 @@ const MovieDetails = ({ movie }: MovieDetailsProps) => {
           {data.collection && (
             <div className="mb-6">
               <Link href={`/collection/${data.collection.id}`}>
-                <div className="group relative z-0 scale-100 transform-gpu cursor-pointer overflow-hidden rounded-lg bg-gray-800 bg-cover bg-center shadow-md ring-1 ring-gray-700 transition duration-300 hover:scale-105 hover:ring-gray-500">
+                <div className="media-collection-card group relative z-0 scale-100 transform-gpu cursor-pointer overflow-hidden rounded-lg bg-gray-800 bg-cover bg-center shadow-md ring-1 ring-gray-700 transition duration-300 hover:scale-105 hover:ring-gray-500">
                   <div className="absolute inset-0 z-0">
                     <CachedImage
                       type="tmdb"
@@ -751,13 +745,7 @@ const MovieDetails = ({ movie }: MovieDetailsProps) => {
                       }}
                       fill
                     />
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        backgroundImage:
-                          'linear-gradient(180deg, rgba(31, 41, 55, 0.47) 0%, rgba(31, 41, 55, 0.80) 100%)',
-                      }}
-                    />
+                    <div className="media-collection-card-overlay absolute inset-0" />
                   </div>
                   <div className="relative z-10 flex h-full items-center justify-between p-4 text-gray-200 transition duration-300 group-hover:text-white">
                     <div>{data.collection.name}</div>
