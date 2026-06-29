@@ -1,0 +1,223 @@
+/*
+ * Light theme palette and targeted component overrides.
+ * Tailwind color utilities read these variables through tailwind.config.js.
+ */
+
+html.theme-light {
+  --color-black: 255 255 255;
+  --color-white: 0 0 0;
+  --color-blue-50: 4 11 20;
+  --color-blue-300: 21 71 127;
+  --color-gray-50: 4 5 6;
+  --color-gray-100: 10 11 13;
+  --color-gray-200: 22 24 28;
+  --color-gray-300: 39 43 49;
+  --color-gray-400: 86 93 105;
+  --color-gray-500: 135 142 156;
+  --color-gray-600: 162 172 186;
+  --color-gray-700: 182 192 208;
+  --color-gray-800: 206 216 230;
+  --color-gray-900: 225 232 247;
+  --color-green-50: 0 9 0;
+  --color-green-700: 75 182 115;
+  --color-indigo-50: 9 13 26;
+  --color-indigo-100: 17 24 48;
+  --color-indigo-200: 32 43 87;
+  --color-indigo-300: 56 71 143;
+  --color-indigo-400: 93 104 212;
+  --color-indigo-600: 167 158 255;
+  --color-indigo-700: 184 173 255;
+  --color-neutral-200: 26 26 26;
+  --color-neutral-800: 217 217 217;
+  --color-orange-400: 182 77 0;
+  --color-purple-50: 11 6 16;
+  --color-purple-200: 47 27 69;
+  --color-purple-400: 140 80 200;
+  --color-purple-700: 249 157 255;
+  --color-red-50: 20 8 8;
+  --color-red-100: 45 17 17;
+  --color-red-300: 140 53 53;
+  --color-red-400: 219 84 84;
+  --color-red-600: 255 139 139;
+  --color-red-700: 255 160 160;
+  --color-red-900: 255 184 184;
+  --color-yellow-50: 7 5 0;
+  --color-yellow-100: 17 12 0;
+  --color-yellow-200: 38 24 0;
+  --color-yellow-300: 70 41 0;
+  --color-yellow-400: 104 58 0;
+  --color-yellow-700: 206 143 52;
+
+  background: rgb(var(--color-gray-900));
+  color-scheme: light;
+  scrollbar-color: rgb(var(--color-gray-500)) rgb(var(--color-gray-800));
+}
+
+html.theme-light:hover {
+  scrollbar-color: rgb(var(--color-gray-600)) rgb(var(--color-gray-800));
+}
+
+html.theme-light::-webkit-scrollbar-track {
+  background: rgb(var(--color-gray-800));
+}
+
+html.theme-light::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--color-gray-500));
+}
+
+html.theme-light:hover::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--color-gray-600));
+}
+
+html.theme-light body {
+  background: rgb(var(--color-gray-900));
+}
+
+html.theme-light #__next {
+  min-height: 100%;
+  color: rgb(var(--color-gray-50));
+}
+
+.seerr-logo-light {
+  display: none;
+}
+
+html.theme-light .seerr-logo-dark {
+  display: none;
+}
+
+html.theme-light .seerr-logo-light {
+  display: block;
+}
+
+html.theme-light
+  :where(
+    input[type='text'],
+    input[type='password'],
+    input[type='email'],
+    input[type='number'],
+    input[type='search'],
+    input[type='url'],
+    select,
+    textarea
+  ) {
+  border-color: rgb(var(--color-gray-500));
+  background-color: rgb(var(--color-gray-700));
+  color: rgb(var(--color-gray-50));
+}
+
+html.theme-light :where(code) {
+  background-color: rgb(var(--color-gray-800));
+  color: rgb(var(--color-gray-50));
+}
+
+html.theme-light :where(label, .group-label) {
+  color: rgb(var(--color-gray-400));
+}
+
+html.theme-light :where(.label-tip) {
+  color: rgb(var(--color-gray-500));
+}
+
+html.theme-light .sidebar {
+  border-color: rgb(var(--color-gray-700));
+  background: linear-gradient(
+    180deg,
+    rgb(var(--color-gray-800)) 0%,
+    #e0e6f5 100%
+  );
+  color: rgb(var(--color-gray-50));
+}
+
+html.theme-light .sidebar :where(a) {
+  color: rgb(var(--color-gray-50));
+}
+
+html.theme-light .sidebar :where(a:hover, a:focus) {
+  background-color: rgb(var(--color-gray-700));
+  color: rgb(var(--color-gray-50));
+}
+
+html.theme-light .slider-title {
+  color: rgb(var(--color-gray-300));
+}
+
+html.theme-light a.slider-title:hover {
+  color: rgb(var(--color-gray-50));
+}
+
+html.theme-light .title-card-overlay {
+  background: linear-gradient(
+    180deg,
+    rgb(var(--color-gray-800) / 0.35) 0%,
+    rgb(var(--color-gray-900) / 0.88) 100%
+  ) !important;
+}
+
+html.theme-light .media-page-bg-overlay {
+  background-image: linear-gradient(
+    180deg,
+    rgb(var(--color-gray-900) / 0.35) 0%,
+    rgb(var(--color-gray-900) / 0.75) 58%,
+    rgb(var(--color-gray-900)) 100%
+  );
+}
+
+html.theme-light .media-collection-card {
+  background-color: #1f2937;
+  --tw-ring-color: #374151;
+}
+
+html.theme-light .media-collection-card:hover {
+  --tw-ring-color: #6b7280;
+}
+
+html.theme-light
+  .media-collection-card
+  :where([class~='text-gray-200']) {
+  color: #e5e7eb;
+}
+
+html.theme-light
+  .media-collection-card:hover
+  :where([class~='group-hover:text-white']) {
+  color: #ffffff;
+}
+
+html.theme-light .company-card {
+  background-color: #1f2937;
+  --tw-ring-color: #374151;
+}
+
+html.theme-light .company-card:hover {
+  background-color: #374151;
+  --tw-ring-color: #6b7280;
+}
+
+html.theme-light .company-card :where([class~='from-gray-800']) {
+  --tw-gradient-from: #1f2937 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(31 41 55 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+html.theme-light .company-card :where([class~='from-gray-900']) {
+  --tw-gradient-from: #111827 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(17 24 39 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+html.theme-light
+  [data-testid='title-card']
+  :where(
+    [class~='bg-blue-500'],
+    [class~='bg-blue-600/80'],
+    [class~='bg-purple-600'],
+    [class~='bg-purple-600/80'],
+    [class~='bg-green-400']
+  )
+  :where([class~='text-white']),
+html.theme-light
+  [data-testid='title-card']
+  :where([class~='bg-green-400'][class~='text-white']) {
+  color: #ffffff;
+}

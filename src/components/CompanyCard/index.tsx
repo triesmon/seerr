@@ -14,7 +14,7 @@ const CompanyCard = ({ image, url, name }: CompanyCardProps) => {
   return (
     <Link
       href={url}
-      className={`relative flex h-32 w-56 transform-gpu cursor-pointer items-center justify-center p-8 shadow ring-1 transition duration-300 ease-in-out sm:h-36 sm:w-72 ${
+      className={`company-card relative flex h-32 w-56 transform-gpu cursor-pointer items-center justify-center p-8 shadow ring-1 transition duration-300 ease-in-out sm:h-36 sm:w-72 ${
         isHovered
           ? 'scale-105 bg-gray-700 ring-gray-500'
           : 'scale-100 bg-gray-800 ring-gray-700'
